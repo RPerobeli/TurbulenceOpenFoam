@@ -3,8 +3,8 @@ clear all
 close all
 clc
 
-%pkg load signal;
-desloc=load('coefficient.dat','-ascii'); 
+pkg load signal;
+desloc=load('coefficient_0.dat','-ascii'); 
 
 [npontos, tam2] = size(desloc);
 
@@ -75,14 +75,14 @@ xx=bfil2(:,2);
 
 
 %Figure(2);
-% i=682*2*2;
-% window=i;
-% figure
-% [Pxx,f] =pwelch(xx,window,.5,[],Fs,'onesided');
-% 
-% plot(f,Pxx)
-%  espec=[f Pxx];
-%  save cl.esp espec -ascii
-%  amp=max(Pxx)*1.2;  
-%  axis([0 1 0 amp]);
+i=682*2*2;
+window=i;
+figure
+[Pxx,f] =pwelch(xx,window,.5,[],Fs,'onesided');
+
+plot(f,Pxx)
+ espec=[f Pxx];
+ save cl.esp espec -ascii
+ amp=max(Pxx)*1.2;  
+ axis([0 1 0 amp]);
 

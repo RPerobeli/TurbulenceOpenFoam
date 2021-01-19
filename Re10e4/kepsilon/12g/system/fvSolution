@@ -50,6 +50,15 @@ solvers
         relTol           0.1;
         nSweeps          1;
     }
+    epsilon
+    {
+        solver           smoothSolver;
+        smoother         GaussSeidel;
+        tolerance        1e-8;
+        relTol           0.1;
+        nSweeps          1;
+    }
+
 }
 
 SIMPLE
