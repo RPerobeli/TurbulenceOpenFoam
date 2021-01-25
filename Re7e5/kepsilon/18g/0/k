@@ -17,14 +17,14 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 1.5;
+internalField   uniform 1.5e-4;
 
 boundaryField
 {
     inlet
     {
         type            fixedValue;
-        value           uniform  1.5;
+        value           $internalField;
     }
     outlet
     {
@@ -33,17 +33,17 @@ boundaryField
     airfoil
     {
         type            kqRWallFunction;
-        value           uniform 1.5;
+        value           $internalField;
     }
     top
     {
         type             fixedValue;
-        value           uniform  1.5;
+        value           $internalField;
     }
     bottom
     {
         type            fixedValue;
-        value           uniform  1.5;
+        value           $internalField;
     }
     front
     {

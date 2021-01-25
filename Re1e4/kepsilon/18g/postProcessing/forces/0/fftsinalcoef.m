@@ -4,7 +4,7 @@ close all
 clc
 
 %pkg load signal;
-desloc=load('coefficient.dat','-ascii'); 
+desloc=load('coefficient_0.dat','-ascii'); 
 
 [npontos, tam2] = size(desloc);
 
