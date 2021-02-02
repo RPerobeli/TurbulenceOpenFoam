@@ -3,24 +3,24 @@ clear all
 close all
 clc
 
-%pkg load signal;
-desloc=load('coefficient.dat','-ascii'); 
+
+desloc=load('forceCoeffs_0.dat','-ascii'); 
 
 [npontos, tam2] = size(desloc);
 
    
 k =1;
 
-  ttrans=3;       
-%fprintf ('Intervalo de tempo da resposta =');
-%dint = input ('Intervalo de tempo da resposta =');
+  ttrans=2;       
+fprintf ('Intervalo de tempo da resposta =');
+dint = input ('Intervalo de tempo da resposta =');
 dint=.01;
 icont    = 0;
 deltat   = 0;
 ds       = 0;
 
 coef =4;                                      
-%desloc(:,coef)=desloc(:,coef)*k;
+desloc(:,coef)=desloc(:,coef)*k;
 for i=1:npontos;
     deltata = deltat;
     dxa = desloc(i,coef);
@@ -66,7 +66,7 @@ plot(t,b);
 
  % save p1.dat bfil2 -ascii
 
-%Figure(1);
+Figure(1);
 Fs=1/dint;
 
 t=bfil2(:,1);
@@ -74,15 +74,5 @@ t=bfil2(:,1);
 xx=bfil2(:,2);
 
 
-%Figure(2);
-% i=682*2*2;
-% window=i;
-% figure
-% [Pxx,f] =pwelch(xx,window,.5,[],Fs,'onesided');
-% 
-% plot(f,Pxx)
-%  espec=[f Pxx];
-%  save cl.esp espec -ascii
-%  amp=max(Pxx)*1.2;  
-%  axis([0 1 0 amp]);
+Figure(2);
 
